@@ -75,7 +75,34 @@ print('name = ',name) # 출력 결과  name =  손흥민
       del rookie[12] # 키 삭제
     ```
   - tuple
+    ```python
+      whatThe_f = "BD33","웡크스","로셀소"
+      # tuple은 값 변경 안됌.
+    ```
   - set
+    ```python
+      # 중복이 안되고 순서가 없다.
+      java = {'나', '잡스', '제프리'}
+      python = set(['나', '주커버그', '빌게이츠', '머스크', '피차이'])
+
+      # 교집합 ( java 와 python 모두 할 수 있는 사람 )
+      print(java & python) 
+      print(java.intersection(python))
+      
+      # 합집합 ( java 또는 python 할 수 있는 사람 )
+      print(java | python) 
+      print(java.union(python))
+
+      # 차집합 ( java 는 할 수 있지만 python 못하는 사람 )
+      print(java - python)
+      print(java.difference(python))
+
+      # python 할 줄 아는 사람 늘어남
+      python.add('제프리')
+
+      # java 를 잊음
+      java.remove('잡스')
+    ```
   - dictionary
 
 

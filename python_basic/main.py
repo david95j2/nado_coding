@@ -1,3 +1,4 @@
-rookie = {10:'홀란드', 8:'블라호비치', 12:'음바페'}
+best3 = {'덕배', '브페', '메시'}
+best5 = set(['덕배', '손', '키에사', '더리흐트', '칸셀루'])
 
-print(20 in rookie)
+print(best3.intersection(best5))
