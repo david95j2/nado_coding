@@ -64,6 +64,16 @@ print('name = ',name) # 출력 결과  name =  손흥민
 
       Best3_listType.extend(lotoo_num) # 리스트끼리 합치기
     ```
+  - dictionary
+    ```python
+      rookie = {10:'홀란드', 8:'블라호비치', 12:'음바페'}
+      print(rookie[12]) # 음바페 / 없을 시 프로그램 종료
+      print(rookie.get(10)) # 홀란드 / 없을 시 None 으로 대체 하고 스킵함
+      print(rookie.get(9, '새 유망주')) # 새 유망주 / 없을 시 새 유망주 찍음
+      print(20 in rookie) # 20인 유망주가 있냐? False
+      rookie[20] = "더용" # 새로운 값 추가할 때
+      del rookie[12] # 키 삭제
+    ```
   - tuple
   - set
   - dictionary
