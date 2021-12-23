@@ -1,4 +1,10 @@
-best3 = {'덕배', '브페', '메시'}
-best5 = set(['덕배', '손', '키에사', '더리흐트', '칸셀루'])
+gun = 10
 
-print(best3.intersection(best5))
+def checkpoint(soldiers):
+  global gun
+  gun = gun - soldiers
+  print("[함수 내] 남은 총 : {}".format(gun))
+
+print("전체 총 : {}".format(gun))
+checkpoint(2)
+print("남은 총 : {}".format(gun))

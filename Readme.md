@@ -14,28 +14,28 @@ Question.
 
 1. Java와 달리 변수를 선언할 때, 자료형을 명시적으로 선언하지 않는다 
 
-```java
-// java 에서의 변수 선언
-  int num = 10
-  printf("int num = %d\n", num);
-```
+    ```java
+    // java 에서의 변수 선언
+      int num = 10
+      printf("int num = %d\n", num);
+    ```
 
-```python
-# Python 에서의 변수 선언
-  num = 10
-  print("int num = %d" %num)
-```
+    ```python
+    # Python 에서의 변수 선언
+      num = 10
+      print("int num = %d" %num)
+    ```
 
-2. print 구문시 
+    2. print 구문시 
 
-```python
-# 첫번째 방법
-name = "손흥민"
-print('name = '+name) # 출력 결과  name = 손흥민
+    ```python
+    # 첫번째 방법
+    name = "손흥민"
+    print('name = '+name) # 출력 결과  name = 손흥민
 
-# 두번째 방법 콤마로 할 시 앞에 뛰어쓰기 한칸 생김
-print('name = ',name) # 출력 결과  name =  손흥민 
-```
+    # 두번째 방법 콤마로 할 시 앞에 뛰어쓰기 한칸 생김
+    print('name = ',name) # 출력 결과  name =  손흥민 
+    ```
 
 ---
 ### DataType
@@ -103,8 +103,6 @@ print('name = ',name) # 출력 결과  name =  손흥민
       # java 를 잊음
       java.remove('잡스')
     ```
-  - dictionary
-
 
 
 ### 연산자
@@ -195,8 +193,57 @@ site = site[:3]+str(len(site))+str(site.count("e")) + "!"
 print(site)
 ```
 
+
+#### Quiz ) 
+
+
 ---
 #### Memo
 
 - index() 해당 원소 찾아줌
 - replace() 자바와 같음.
+
+cf) datatype
+  ```python
+    a = '123' # str
+    a = 123 # int
+    a = 123.0 # float
+    a = 12 + 3j # complex
+    a = 1,2,3 # tuple
+    a = {1,2,3} # set
+    a = {1:1, 2:2, 3:3} # dict
+    a = [1,2,3] # list
+    a = set([1,2,3]) # set
+  ```
+
+
+cf) 전역변수 & 지역변수
+  ```python
+    gun = 10
+
+    def checkpoint(soldiers):
+      gun = 20
+      gun = gun - soldiers
+      print("[함수 내] 남은 총 : {}".format(gun))
+
+    print("전체 총 : {}".format(gun))
+    checkpoint(2)
+    print("남은 총 : {}".format(gun))
+  ```
+  > 이렇게 진행하면 변수 gun 의 값은 변하지 않고 그대로 10이다.
+  >
+  > 저 gun 의 값을 변하게 하려면
+
+  ```python
+    gun = 10
+
+    def checkpoint(soldiers):
+      global gun
+      gun = gun - soldiers
+      print("[함수 내] 남은 총 : {}".format(gun))
+
+    print("전체 총 : {}".format(gun))
+    checkpoint(2)
+    print("남은 총 : {}".format(gun))
+  ```
+  > 이렇게 global 이라는 전역변수를 사용하게 되면 gun의 값은 8로 변하게 된다.
