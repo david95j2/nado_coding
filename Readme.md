@@ -4,6 +4,7 @@ Question.
 
 - 함수
 - print 구문시 큰따옴표와 작은 따옴표 차이?
+  - 문법적으로 별 차이 없음 관습임(작은 따옴표는 기호나 식별자 , 큰 따옴표는 텍스트).
 - 
 
 ---
@@ -22,7 +23,7 @@ Question.
 ```python
 # Python 에서의 변수 선언
   num = 10
-  print(num)
+  print("int num = %d" %num)
 ```
 
 2. print 구문시 
@@ -110,8 +111,36 @@ print(randrange(1,46)) # 1 이상 ~ 45 이하의 임의의 값 생성 46은 포�
 print(randint(1,45)) # 1 이상 ~ 45 이하의 임의의 값 생성
 ```
 
-#### Quiz)
+#### Quiz )
 ```python
 import random
 print('오프라인 스터디 모임 날짜는 매월',str(random.randint(4,28))+'일로 선정되었습니다.')
+```
+
+
+### 문자열 포맷
+```python
+print("손흥민이 리그에서 %d골 박고 %s 발랐으면 좋겠다. when the %cpurs go marching in!!" % (3, "맨유", "s"))
+#출력 결과 : 손흥민이 리그에서 3골 박고 맨유 발랐으면 좋겠다. when the spurs go marching in!!
+
+
+print("{1}랑 {0}도 {2}골 차이로 이길 수 있다고 믿습니다.. 콘버지.. {3}좀 버려라.." .format("첼시", "리버풀", 2, "bd33 "))
+#출력 결과 : 리버풀랑 첼시도 2골 차이로 이길 수 있다고 믿습니다.. 콘버지.. bd33 좀 버려라..
+
+print("만약 \"{rival}\"한테 {goal}골 이라도 먹히면 다 죽는거야.." .format( goal = 1,rival = "아스널"))
+#출력 결과 : 만약 "아스널"한테 1골 이라도 먹히면 다 죽는거야..
+
+name = "덕배"
+age = 26
+print(f"{age}살 '{name}'가 살아나니 겁나 좋다")
+#출력 결과 : 26살 '덕배'가 살아나니 겁나 좋다
+```
+
+#### Quiz )
+```python
+site = "https://naver.com"
+site = site.replace("https://","")
+site = site[:site.index(".")]
+site = site[:3]+str(len(site))+str(site.count("e")) + "!"
+print(site)
 ```
