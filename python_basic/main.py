@@ -1,13 +1,8 @@
-print('python','java','c++', end=' ')
-print('Python','java','c++', sep=' vs ')
+arr = ["A","B","C","D","E","F","G","H","I","J"]
+# print(arr[::2])
+# print(arr[1::2])
 
-import sys
-print('python','java', file=sys.stdout)
-# 로그 기록을 남길 때 사용 에러가 난 부분을 쉽게 찾을 수 있다. 
-print('python','java', file=sys.stderr) 
+# arr_num = [1,2,3,4,5,6,7,8,9,10]
+# print(arr[3::-1])
 
-
-scores = {"수학":0, "영어":50, "코딩":90}
-for subject, score in scores.items():
-  print(subject.ljust(8), str(score).rjust(4), sep=":")
-
+print(arr[-2:2:-1])

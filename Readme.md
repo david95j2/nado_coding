@@ -5,9 +5,11 @@ Question.
 - 함수
 - print 구문시 큰따옴표와 작은 따옴표 차이?
   - 문법적으로 별 차이 없음 관습임(작은 따옴표는 기호나 식별자 , 큰 따옴표는 텍스트)
-  > but.. dictionary를 쓸때는 큰따옴표로 묶지 않으면 아래와 같은 오류를 발생한다.
+    
+    > but.. dictionary를 쓸때는 큰따옴표로 묶지 않으면 아래와 같은 오류를 발생한다.
   ```python
-    앰퍼샌드(&) 문자를 사용할 수 없습니다. & 연산자는 나중에 사용하도록 예약되었습니다. 앰퍼샌드를 문자열의 일부로 전달하려면 큰따옴표로 묶으십시오("&").
+    앰퍼샌드(&) 문자를 사용할 수 없습니다. & 연산자는 나중에 사용하도록 예약되었습니다. 
+    앰퍼샌드를 문자열의 일부로 전달하려면 큰따옴표로 묶으십시오("&").
     + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
     + FullyQualifiedErrorId : AmpersandNotAllowed
   ```
@@ -60,6 +62,27 @@ Question.
       print('python','java','c++', end=' ') # 문장의 끝 부분을 띄어쓰기 해라.
       print('Python','java','c++', sep=' vs ') # 콤마를 ' vs ' 로 바꿔라.
       # 출력 결과 : python java c++ Python vs java vs c++
+
+      for num in range(1, 21):
+        print("대기번호 : "+str(num).zfill(3))
+        # zfill() 
+      
+      # 빈 자리는 빈공간으로 두고, 오른쪽으로 정렬을 하되, 총 10자리 공간을 확보
+      print("{0: >10}".format(500))
+      print("{0: >+10}".format(-500)) # 양수일때는 + 음수일때는 -
+      print("{0:_<+10}".format(500)) # 왼쪽 정렬 후, 빈칸으로 _ 채우기
+      print("{0:,}".format(1000000000)) # 3자리마다 콤마찍기.
+      print("{0:+,}".format(1000000000)) # 3자리마다 콤마찍고 +- 부호 붙이기.
+      
+      # 3자리 마다 콤마를 찍어주기, 부호도 붙이고, 자릿수 확보하기
+      # 돈이 많으면 행복하니까 빈 자리는 ^ 로 채워주기.
+      print("{0:^<+30,}".format(100000000000))
+
+      # 소수점 출력
+      print("{0:f}".format(5/3)) 
+
+      # 소수점 특정 자리까지 (반올림하고 출력)
+      print("{:.2f}".format(5/3))
     ```
   - list
     ```python
@@ -114,7 +137,31 @@ Question.
       # java 를 잊음
       java.remove('잡스')
     ```
+### array 겁내 중요함!!!!!!!!!!!!!!!!!!
+```python
+  arr = ["A","B","C","D","E","F","G","H","I","J"]
+  
+  # 1
+  print(arr[2]) # C
+  print(arr[-1]) # J
+  print(arr[arr.index("F")]) # F
 
+  # 2 slicing
+  print(arr[:]) # A B C D E F G H I J
+  print(arr[5:]) # F G H I J
+  print(arr[-1:]) # J
+  print(arr[3:7]) # D E F G
+  print(arr[3:-2]) # D E F G H
+
+  # 3 Extended Slices
+  # arr[A:B:C] == index A부터 index B 까지 C의 간격으로 배열을 만들어라
+  print(arr[::]) # A B C D E F G H I J
+  print(arr[1::3]) # B E H  / 1번째 index 부터 3간격으로 출력
+  print(arr[-5::-1]) # F E D C B A  / -5번째 idnex 부터 1간격으로 역순 출력
+  print(arr[-5::1]) # F G H I J  / -5번쨰 index 부터 1간격으로 출력
+  print(arr[2:6:2]) # C E  / 2번째 index 부터 6 - 1 index 까지 2의 간격으로 출력
+  print(arr[-2:2:-2]) # I G E / -2번째 idnex부터 2 + 1 index 까지 -2의 간격으로 출력
+```
 
 ### 연산자
 
@@ -204,15 +251,12 @@ site = site[:3]+str(len(site))+str(site.count("e")) + "!"
 print(site)
 ```
 
-
-#### Quiz ) 
-
-
 ---
 #### Memo
 
 - index() 해당 원소 찾아줌
 - replace() 자바와 같음.
+- input() 커서가 깜빡이면서 콘솔창에 입력하게 된다.
 -
 - sys.stdin   -  입력 버퍼, 입력 버퍼가 없으면 키보드 입력
 - sys.stdout - 출력 버퍼, 출력 버퍼가 지정되어 있지 않으면 터미널 출력  (표준 출력)
@@ -224,6 +268,8 @@ print(site)
   for subject, score in scores.items():
     print(subject.ljust(8), str(score).rjust(4), sep=":")
 ```
+
+- with를 사용해서 close를 하지 않는다.
 
 cf) datatype
   ```python
