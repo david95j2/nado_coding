@@ -1,25 +1,13 @@
-gun = 10
+print('python','java','c++', end=' ')
+print('Python','java','c++', sep=' vs ')
 
-# def checkpoint(soldiers):
-#   global gun
-#   gun = gun - soldiers
-#   print("[함수 내] 남은 총 : {}".format(gun))
+import sys
+print('python','java', file=sys.stdout)
+# 로그 기록을 남길 때 사용 에러가 난 부분을 쉽게 찾을 수 있다. 
+print('python','java', file=sys.stderr) 
 
-# print("전체 총 : {}".format(gun))
-# checkpoint(2)
-# print("남은 총 : {}".format(gun))
 
-def checkpoint(soldiers):
-  global gun
-  gun = gun - soldiers
-  print("[함수 내] 남은 총 : {}".format(gun))
+scores = {"수학":0, "영어":50, "코딩":90}
+for subject, score in scores.items():
+  print(subject.ljust(8), str(score).rjust(4), sep=":")
 
-def checkpoint_ret(gun, soldiers):
-  gun = gun - soldiers
-  print("[함수 내] 남은 총 : {}".format(gun))
-  return gun
-
-print("전체 총 : {}".format(gun))
-
-gun = checkpoint_ret(gun, 2)
-print("남은 총 : {}".format(gun))

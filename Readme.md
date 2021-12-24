@@ -4,7 +4,13 @@ Question.
 
 - 함수
 - print 구문시 큰따옴표와 작은 따옴표 차이?
-  - 문법적으로 별 차이 없음 관습임(작은 따옴표는 기호나 식별자 , 큰 따옴표는 텍스트).
+  - 문법적으로 별 차이 없음 관습임(작은 따옴표는 기호나 식별자 , 큰 따옴표는 텍스트)
+  > but.. dictionary를 쓸때는 큰따옴표로 묶지 않으면 아래와 같은 오류를 발생한다.
+  ```python
+    앰퍼샌드(&) 문자를 사용할 수 없습니다. & 연산자는 나중에 사용하도록 예약되었습니다. 앰퍼샌드를 문자열의 일부로 전달하려면 큰따옴표로 묶으십시오("&").
+    + CategoryInfo          : ParserError: (:) [], ParentContainsErrorRecordException
+    + FullyQualifiedErrorId : AmpersandNotAllowed
+  ```
 - 
 
 ---
@@ -50,6 +56,11 @@ Question.
 
 3. 군집 자료형
   - str
+    ```python
+      print('python','java','c++', end=' ') # 문장의 끝 부분을 띄어쓰기 해라.
+      print('Python','java','c++', sep=' vs ') # 콤마를 ' vs ' 로 바꿔라.
+      # 출력 결과 : python java c++ Python vs java vs c++
+    ```
   - list
     ```python
       Best3_listType = ["덕배","아놀드","브페"]
@@ -202,6 +213,17 @@ print(site)
 
 - index() 해당 원소 찾아줌
 - replace() 자바와 같음.
+-
+- sys.stdin   -  입력 버퍼, 입력 버퍼가 없으면 키보드 입력
+- sys.stdout - 출력 버퍼, 출력 버퍼가 지정되어 있지 않으면 터미널 출력  (표준 출력)
+- sys.stderr  - 출력 버퍼, 출력 버퍼가 지정되어 있지 않으면 터미널 출력 (에러 출력)
+  - 출처: https://kibua20.tistory.com/71 [모바일 SW 개발자가 운영하는 블로그]
+
+```python
+  scores = {'수학':0, '영어':50, '코딩':90}
+  for subject, score in scores.items():
+    print(subject.ljust(8), str(score).rjust(4), sep=":")
+```
 
 cf) datatype
   ```python
