@@ -4,5 +4,9 @@ arr = ["A","B","C","D","E","F","G","H","I","J"]
 
 # arr_num = [1,2,3,4,5,6,7,8,9,10]
 # print(arr[3::-1])
+a = list(input())
+print(a)
 
-print(arr[-2:2:-1])
+# for i in a:
+#       print("Case #{}:  "+eval(input().replace(" ","+")).format(str(i)))
+
