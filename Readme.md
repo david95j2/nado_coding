@@ -175,7 +175,32 @@ Question.
 
   - 인스턴스란 클래스에 의해 만들어진 객체이다.
   
+
+  ```python
+    for unit attckUnints:
+      if isinstance(unit, Maring):
+        
+  ```
   
+  ```python
+    class Parents:
+      # 메소드
+      def __init__(self, name, age):
+        # 이것이 멤버변수
+        self.name = name
+        self.age = age
+        print('초기화')
+
+      def home(self, locataion):
+        print("{}는 {}살이며, {}에 사신다.".format(self.name,self.age,locataion))  
+
+    # 이것이 객체
+    father = Parents('아버지','대전')
+
+    mother = Parents('어머니','세종')
+
+    #확장된 변수는 할당한 객체에만 적용된다.
+    mother.child = True
   ```
 
 ### 연산자
