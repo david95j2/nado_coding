@@ -295,6 +295,13 @@ print(site)
 ```python
   try:
     # 예외가 발생할 수 있는 코드
+    num = int(input())
+
+    if num == 0
+      raise ValueError
+
+    elif num%2 != 0:
+      raise Exception("홀수다!!!!!!!")
   except:
     # 예외가 발생했을때 실행할 코드
   else :
