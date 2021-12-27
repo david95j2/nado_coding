@@ -179,7 +179,7 @@ Question.
   ```python
     for unit attckUnints:
       if isinstance(unit, Maring):
-        
+
   ```
   
   ```python
@@ -289,6 +289,18 @@ site = site.replace("https://","")
 site = site[:site.index(".")]
 site = site[:3]+str(len(site))+str(site.count("e")) + "!"
 print(site)
+```
+
+### 예외처리
+```python
+  try:
+    # 예외가 발생할 수 있는 코드
+  except:
+    # 예외가 발생했을때 실행할 코드
+  else :
+    # 예외가 발생하지 않았을 때 실행할 코드
+  finally:
+    # 예외 발생 여부와 상관없이 무조건 실행할 코드
 ```
 
 ---
