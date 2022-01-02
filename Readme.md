@@ -203,6 +203,43 @@ Question.
     mother.child = True
   ```
 
+  - Overriding & Overloading
+    - 사용하는 이유는 무엇일까?
+      - 먼저 Overriding, 상속 받은 메서드를 다시 정의하고 싶을 때.
+      - Overloading은 같은 동작을 해야 하는 메소드를 작성해야 하는데 매개변수가 다른경우.
+
+    ```python
+    # Overriding
+    class Person:
+      def hello(self):
+        print('안녕하세요.')
+
+    class Student(Person):
+      def hello(self):
+        print('안녕하세요. 저는 파이썬을 배우는 학생입니다.')
+
+    johnDoe = Person()
+    johnDoe.hello() # 안녕하세요
+
+    johnDoe = Student()
+    johnDoe.hello() # 안녕하세요. 저는 파이썬을..
+    ```
+
+    ```python
+    class delftstack:
+      def __init__(self, *args):
+        if len(args)>3:
+          self.ans = "More than three"
+        elif len(args)<=3:
+          self.ans = "Less than three"
+
+    s1 = delftstack(1,2,3,4)
+    print(s1.ans) # More than three
+
+    s2 = delftstack(1,2)
+    print(s2.ans) # Less than three
+    ```
+
 ### 연산자
 
 ```python
